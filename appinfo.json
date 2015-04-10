@@ -1,0 +1,19 @@
+{
+  "uuid": "55f7744b-f586-45b8-854c-554f34489f50",
+  "shortName": "Conglomerate",
+  "longName": "Conglomerate",
+  "companyName": "Conglomerate (via @cynorg)",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
