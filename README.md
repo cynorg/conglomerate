@@ -1,7 +1,7 @@
 # Conglomerate
 Conglomerate aims to be the go-to template for starting a new watch project for the Pebble smartwatch.
 
-It will consist of a repository of GPL/BSD/CC utilities, libraries, and resources which can be forked and modified to accelerate the creation of a stable and optimal Pebble project, where all you need to write is the unique pieces you need.
+It will consist of a repository of GPL/BSD/CC utilities, libraries, and resources which can be forked and modified to accelerate the creation of a stable and optimal Pebble project, where all you need to code are the unique pieces you need.
 
 The primary goals of the project:
   - [x] free/open source licensing/permissions for all included functionality
