@@ -8,7 +8,7 @@ The primary goals of the project:
   - [ ] Optimized libraries to implement the common features desired in a Pebble watch app, targeting but not limited to:
     - [ ] Connection state ( & optional tracking via AM )
     - [ ] Battery state ( & optional tracking via AM )
-    - [ ] AppMessage (w/ retry queues on watch and phone side) - [BAM](/smallstoneapps/bam)
+    - [ ] AppMessage (w/ retry queues on watch and phone side) - <em>([BAM](http://github.com/smallstoneapps/bam) ?)</em>
     - [ ] Configuration page generation
     - [ ] Settings saving/loading/transferring between watch, phone, and settings page
     - [ ] Timezone
