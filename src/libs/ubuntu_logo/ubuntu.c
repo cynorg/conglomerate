@@ -1,6 +1,8 @@
 #include "libs/ubuntu_logo/ubuntu.h"
 
 void draw_ubuntu_logo(GRect bounds, GContext *ctx, GColor foreground, GColor background) {
+#ifdef PBL_SDK_3 //EVIL
+
 // assumes the background is colored appropriately, we're not going to just coat the bounds w/ the appropriate background color.
 
 //TODO: perfect ratio/sizes - they're not quite right yet, but the positioning with these new functions is tricky...
@@ -79,4 +81,6 @@ void draw_ubuntu_logo(GRect bounds, GContext *ctx, GColor foreground, GColor bac
   graphics_draw_line(ctx, line2end, center);
   //graphics_context_set_stroke_color(ctx, GColorBlue);
   graphics_draw_line(ctx, line3end, center);
+
+#endif
 }

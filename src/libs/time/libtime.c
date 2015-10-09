@@ -35,10 +35,7 @@ int need_second_tick_handler(void) {
 }
 
 void init_time_layer(Layer *parent) {
-  time_layer = text_layer_create( GRect(0, 0, DEVICE_WIDTH - 2, 20) ); // see position_time_layer()
-//  time_layer = text_layer_create( GRect(REL_CLOCK_TIME_LEFT, REL_CLOCK_TIME_TOP, DEVICE_WIDTH - 2, REL_CLOCK_TIME_HEIGHT) ); // see position_time_layer()
-//  set_layer_attr_cfont(time_layer, RESOURCE_ID_FONT_FUTURA_CONDENSED_48, GTextAlignmentCenter);
-//  position_time_layer(); // make use of our whitespace, if we have it...
+  time_layer = text_layer_create( GRect(0, 0, DEVICE_WIDTH - DEVICE_INSET, 20) );
   update_time_text();
   layer_add_child(parent, text_layer_get_layer(time_layer));
 }

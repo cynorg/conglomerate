@@ -1,27 +1,44 @@
 #include <pebble.h>
 #include "libs/time/libtime.h"
+#include "libs/ubuntu_logo/ubuntu.h"
 #include "common.h"
 #include "conglomerate.h"
 
 static Window *window;
-static TextLayer *text_layer;
+//static TextLayer *text_layer;
+static Layer *ubuntulogo_layer;
+
+void ubuntulogo_update(Layer *me, GContext* ctx) {
+  GRect bounds = layer_get_bounds(me);
+#ifdef PBL_SDK_3 //EVIL
+  //draw_ubuntu_logo(bounds, ctx, GColorOrange, GColorWhite);
+  draw_ubuntu_logo(bounds, ctx, GColorWhite, GColorOrange);
+  //draw_ubuntu_logo(bounds, ctx, GColorBlack, GColorWhite);
+  //draw_ubuntu_logo(bounds, ctx, GColorWhite, GColorBlack);
+#endif
+}
+
 
 static void window_load(Window *window) {
   Layer *window_layer = window_get_root_layer(window);
   GRect bounds = layer_get_bounds(window_layer);
 
-  text_layer = text_layer_create((GRect) { .origin = { 0, (DEVICE_WIDTH/2)-DEVICE_INSET }, .size = { bounds.size.w, 20 } });
-  text_layer_set_text(text_layer, "Hello World");
-  text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
-//  GSize mysize = text_layer_get_content_size(text_layer);
-//  layer_set_frame( text_layer_get_layer(text_layer), GRect(0, ((DEVICE_WIDTH/2)-DEVICE_INSET) - (mysize.h - mysize.h%2)/2, bounds.size.w, mysize.h) );
-  center_text_layer(text_layer,bounds);
-  layer_add_child(window_layer, text_layer_get_layer(text_layer));
+  //text_layer = text_layer_create((GRect) { .origin = { 0, (DEVICE_WIDTH/2)-DEVICE_INSET }, .size = { bounds.size.w, 20 } });
+  //text_layer_set_text(text_layer, "Hello World");
+  //text_layer_set_text_alignment(text_layer, GTextAlignmentCenter);
+  //center_text_layer(text_layer,bounds);
+  //layer_add_child(window_layer, text_layer_get_layer(text_layer));
   init_time_layer(window_layer);
+
+  // Draw Ubuntu Logo
+  ubuntulogo_layer = layer_create(bounds);
+  layer_set_update_proc(ubuntulogo_layer, ubuntulogo_update);
+  layer_add_child(window_layer, ubuntulogo_layer);
 }
 
 static void window_unload(Window *window) {
-  text_layer_destroy(text_layer);
+//  text_layer_destroy(text_layer);
+// ... time layer
 }
 
 static void init(void) {
